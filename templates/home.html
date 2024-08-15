@@ -1,0 +1,340 @@
+{% extends 'base.html' %}
+{% block pagetitle %}
+Plant Disease Detection
+{% endblock pagetitle %}
+{% block body %}
+<style>
+  body{
+    overflow-x: hidden;
+  }
+  @media only screen and (max-width: 830px) {
+    .laptop{
+      display: none;
+    }
+  }
+  @media (min-width:830px) and (max-width: 1536px){
+    .mobile{
+      display: none;
+    }
+  }
+  .rounded-lg{
+    border-radius: 1rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+} 
+
+.wrapper {
+  max-width: 75%;
+  margin: auto;
+}
+
+.wrapper > p,
+.wrapper > h1 {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.wrapper > h1 {
+  letter-spacing: 3px;
+}
+
+.accordion {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 2rem 2.5rem;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.accordion i {
+  font-size: 1.6rem;
+}
+
+
+.pannel {
+  padding: 0 2rem 2.5rem 2rem;
+  background-color: white;
+  overflow: hidden;
+  background-color: #f1f7f5;
+  display: none;
+}
+.pannel p {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.faq {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+}
+.faq.active {
+  border: none;
+}
+
+  
+</style>
+
+
+<div class="row mb-5 text-center text-white laptop">
+    <div class="col-lg-10 mx-auto">
+        <h1 class="display-4" style="padding-top: 2%;font-weight: 400;color: rgb(4, 54, 4);"><b>🍁Plant Disease Detection🍁 </b></h1>
+        <p class="lead" style="font-weight: 500;color: black;">This Project Will Help To Detect Disease From Following Fruites And Vegetables!</p>
+    </div>
+</div>
+
+<center class="laptop">
+    <a href="/index">
+    <button class = "bttn-pill bttn-lg btn-success"><b style="color: black;">Detection</b></button>
+</a>
+</center>
+<div class="row p-5 laptop">
+    <div class=" col">
+        <div class="p-3 bg-white shadow rounded-lg" style="width: 90%;height: 92%;">
+          <img src="https://post.healthline.com/wp-content/uploads/2020/09/Do_Apples_Affect_Diabetes_and_Blood_Sugar_Levels-732x549-thumbnail-1-732x549.jpg" width="250" height="250">
+          <center><p class="lead" style="font-weight: 500;color: black;">Apple</p></center>
+        </div>
+    </div>
+    <div class="col">
+        <div class="p-3 bg-white shadow rounded-lg" style="width: 90%;height: 92%;">
+
+          <img src="https://www.supermarketperimeter.com/ext/resources/0430-blueberries.png?t=1588260305&width=1080" width="250" height="250">
+          <center><p class="lead" style="font-weight: 500;color: black;">Blueberry</p></center>
+        </div>
+    </div>
+    <div class=" col">
+        <div class="p-3 bg-white shadow rounded-lg" style="width: 90%;height: 92%;align-items:center;">
+
+          <img src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/slideshows/health_benefits_of_cherries_slideshow/1800x1200_health_benefits_of_cherries_slideshow.jpg" width="250" height="250">
+          <center><p class="lead" style="font-weight: 500;color: black;">Cherry</p></center>
+        </div>
+    </div>
+    <div class=" col">
+        <div class="p-3 bg-white shadow rounded-lg" style="width: 90%;height: 92%;">
+
+          <img src="https://cdn.britannica.com/36/167236-050-BF90337E/Ears-corn.jpg" width="250" height="250">
+          <center><p class="lead" style="font-weight: 500;color: black;">Corn</p></center>
+        </div>
+    </div>
+</div>
+
+<div class="row p-5 laptop">
+    <div class=" col">
+        <div class="p-3 bg-white shadow rounded-lg" style="width: 90%;height: 92%;">
+          <img src="https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg" width="250" height="250">
+          <center><p class="lead" style="font-weight: 500;color: black;">Grape</p></center>
+        </div>
+    </div>
+    <div class="col">
+        <div class="p-3 bg-white shadow rounded-lg" style="width: 90%;height: 92%;">
+
+          <img src="https://www.irishtimes.com/polopoly_fs/1.3923226.1560339148!/image/image.jpg_gen/derivatives/ratio_1x1_w1200/image.jpg" width="250" height="250">
+          <center><p class="lead" style="font-weight: 500;color: black;">Orange</p></center>
+        </div>
+    </div>
+    <div class=" col">
+        <div class="p-3 bg-white shadow rounded-lg" style="width: 90%;height: 92%;">
+
+          <img src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/articles/health_tools/the_health_benefits_of_peaches_slideshow/thinkstock_rf_peaches.jpg?resize=650px:*" width="250" height="250">
+          <center><p class="lead" style="font-weight: 500;color: black;">Peach</p></center>
+        </div>
+    </div>
+    <div class=" col">
+        <div class="p-3 bg-white shadow rounded-lg" style="width: 90%;height: 92%;">
+
+          <img src="https://cdn.britannica.com/12/147312-050-BEC6A59E/Bell-peppers.jpg" width="250" height="250">
+          <center><p class="lead" style="font-weight: 500;color: black;">Pepper Bell</p></center>
+        </div>
+    </div>
+</div>
+
+
+<div class="row p-5 laptop">
+    <div class=" col">
+        <div class="p-3 bg-white shadow rounded-lg" style="width: 90%;height: 92%;">
+          <img src="https://m.economictimes.com/thumb/height-450,width-600,imgsize-111140,msid-72862126/potato-getty.jpg" width="250" height="250">
+          <center><p class="lead" style="font-weight: 500;color: black;">Potato</p></center>
+        </div>
+    </div>
+    <div class="col">
+        <div class="p-3 bg-white shadow rounded-lg" style="width: 90%;height: 92%;">
+
+          <img src="https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/326/326272/raspberries-with-ketones-in-a-bowl.jpg?w=1155&h=1541" width="250" height="250">
+          <center><p class="lead" style="font-weight: 500;color: black;">Raspberry</p></center>
+        </div>
+    </div>
+    <div class=" col">
+        <div class="p-3 bg-white shadow rounded-lg" style="width: 90%;height: 92%;">
+
+          <img src="https://m.economictimes.com/thumb/msid-66988154,width-1200,height-900,resizemode-4,imgsize-211276/soyabean-agencies.jpg" width="250" height="250">
+          <center><p class="lead" style="font-weight: 500;color: black;">Soybean</p></center>
+        </div>
+    </div>
+    <div class=" col">
+        <div class="p-3 bg-white shadow rounded-lg" style="width: 90%;height: 92%;">
+
+          <img src="https://post.healthline.com/wp-content/uploads/2020/08/squash-fruit-or-vegetable-732x549-thumbnail-732x549.jpg" width="250" height="250">
+          <center><p class="lead" style="font-weight: 500;color: black;">Squash</p></center>
+        </div>
+    </div>
+</div>
+
+<center class="laptop">
+<div class="row p-5">
+    <div class=" col">
+        <div class="p-3 bg-white shadow rounded-lg" style="width: 45%;height: 92%;">
+          <img src="https://images.indianexpress.com/2020/02/strawberry-1200.jpg" width="250" height="250">
+          <center><p class="lead" style="font-weight: 500;color: black;">Strawberry</p></center>
+        </div>
+    </div>
+    <div class="col">
+        <div class="p-3 bg-white shadow rounded-lg" style="width: 45%;height: 92%;">
+
+          <img src="https://images-prod.healthline.com/hlcmsresource/images/AN_images/tomatoes-1296x728-feature.jpg" width="250" height="250">
+          <center><p class="lead" style="font-weight: 500;color: black;">Tomato</p></center>
+        </div>
+    </div>
+</div>
+</center>
+
+<div class="wrapper">
+
+  <h3>Frequently Asked Questions</h3>
+
+  <div class="faq">
+    <button class="accordion">
+      What are Government Yojana for Farmers?
+      <i class="fa-solid fa-chevron-down"></i>
+    </button>
+    <div class="pannel">
+      <p>
+        1.Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)</br>
+2.Pradhan Mantri Kisan MaanDhan Yojana (PM-KMY)</br>
+3.Pradhan Mantri Fasal Bima Yojana (PMFBY)</br>
+4.Modified Interest Subvention Scheme (MISS)</br>
+5.Agriculture Infrastructure Fund (AIF)</br>
+<a href="https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2002012" target="_blank"> More Info.<a>
+      </p>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="accordion">
+      What types of vegetable leaf diseases can the model detect?
+      <i class="fa-solid fa-chevron-down"></i>
+    </button>
+    <div class="pannel">
+      <pre>
+        1.Apple_scab
+        2.Apple_black_rot
+        3.Apple_cedar_apple_rust
+        4.Apple_healthy
+        5.Background_without_leaves
+        6.Blueberry_healthy
+        7.Cherry_powdery_mildew
+        8.Cherry_healthy
+        9.Corn_gray_leaf_spot
+        10.Corn_common_rust
+        11.Corn_northern_leaf_blight
+        12.Corn_healthy
+        13.Grape_black_rot
+        14.Grape_black_measles
+        15.Grape_leaf_blight
+        16.Grape_healthy
+        17.Orange_haunglongbing
+        18.Peach_bacterial_spot
+        19.Peach_healthy
+        20.Pepper_bacterial_spot
+        21.Pepper_healthy
+        22.Potato_early_blight
+        23.Potato_healthy
+        24.Potato_late_blight
+        25.Raspberry_healthy
+        26.Soybean_healthy
+        27.Squash_powdery_mildew
+        28.Strawberry_healthy
+        29.Strawberry_leaf_scorch
+        30.Tomato_bacterial_spot
+        31.Tomato_early_blight
+        32.Tomato_healthy
+        33.Tomato_late_blight
+        34.Tomato_leaf_mold
+        35.Tomato_septoria_leaf_spot
+        36.Tomato_spider_mites_two-spotted_spider_mite
+        37.Tomato_target_spot
+        38.Tomato_mosaic_virus
+        39.Tomato_yellow_leaf_curl_virus
+      </pre>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="accordion">
+      How can users provide feedback or report issues with the disease detection system?
+      <i class="fa-solid fa-chevron-down"></i>
+    </button>
+    <div class="pannel">
+      <p>
+        Email us :- shivamsingh31@gmail.com,
+        devangraul77@gmail.com
+
+      </p>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="accordion">
+      Are there any specific precautions or recommendations for uploading images of vegetable leaves for disease detection purposes?
+      <i class="fa-solid fa-chevron-down"></i>
+    </button>
+    <div class="pannel">
+      <p>
+        For accurate disease detection, upload clear, unobstructed images of vegetable leaves with consistent background under natural lighting conditions.
+      </br>
+
+      </p>
+    </div>
+  </div>
+
+  
+</div>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      this.parentElement.classList.toggle("active");
+
+      var pannel = this.nextElementSibling;
+
+      if (pannel.style.display === "block") {
+        pannel.style.display = "none";
+      } else {
+        pannel.style.display = "block";
+      }
+    });
+  }
+</script>
+
+
+{% endblock body %}
